@@ -20,14 +20,14 @@ const Header = () => {
             </Nav>
             <div className="d-flex justify-content-space-evenly">
               <button className="btn button mx-1">
-                <i class="fas fa-sign-in-alt"></i> Login
+                <i className="fas fa-sign-in-alt"></i> Login
               </button>
               <h6 className="pt-2">name</h6>
               <button className="btn button mx-1">
-                <i class="fas fa-sign-out-alt"></i> Log Out
+                <i className="fas fa-sign-out-alt"></i> Log Out
               </button>
               <button className="btn fill-btn mx-1">
-                <i class="fas fa-user-plus"></i> Register
+                <i className="fas fa-user-plus"></i> Register
               </button>
             </div>
           </Navbar.Collapse>

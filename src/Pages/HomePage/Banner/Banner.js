@@ -25,7 +25,7 @@ const Banner = () => {
               </div>
               <div className="col-6 text-end">
                 <img
-                  className="d-block img-fluid w-75 p-5"
+                  className="d-block img-fluid  p-4"
                   src="https://i.ibb.co/qp637TG/img-01-2.png"
                   alt="First slide"
                 />
@@ -38,7 +38,7 @@ const Banner = () => {
             <div className="row d-flex align-items-center">
               <div className="col-6">
                 <img
-                  className="d-block  img-fluid w-75 p-5"
+                  className="d-block  img-fluid  p-3"
                   src="https://i.ibb.co/nPTJ2BL/img-03-2.png"
                   alt="Second slide"
                 />
