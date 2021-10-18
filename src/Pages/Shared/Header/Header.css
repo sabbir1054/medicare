@@ -1,0 +1,32 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed&display=swap');
+.button{
+    background-color: rgb(255, 255, 255);
+    color: blueviolet;
+    font-weight: 600;
+    border: 3px solid blueviolet;
+}
+.button:hover{
+    background-color: blueviolet;
+    color: rgb(255, 255, 255);
+    font-weight: 600;
+    border: 3px solid rgb(255, 255, 255);
+}
+
+.fill-btn{
+    background-color: blueviolet;
+    color: rgb(255, 255, 255);
+    font-weight: 600;
+    border: 3px solid rgb(255, 255, 255);
+}
+.fill-btn:hover{
+    background-color: rgb(255, 255, 255);
+    color: blueviolet;
+    font-weight: 600;
+    border: 3px solid blueviolet;
+}
+.brand-color{
+    color: blueviolet;
+}
+.logo{
+    font-family: 'Roboto Condensed', sans-serif;
+}
