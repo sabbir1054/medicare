@@ -18,7 +18,7 @@ const Header = () => {
               <Nav.Link href="#link">Appointment</Nav.Link>
               <Nav.Link href="#link">About</Nav.Link>
             </Nav>
-            <div className="d-flex justify-content-space-evenly">
+            <div className="d-md-flex justify-content-space-evenly">
               <button className="btn button mx-1">
                 <i className="fas fa-sign-in-alt"></i> Login
               </button>

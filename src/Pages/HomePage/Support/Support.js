@@ -6,7 +6,7 @@ const Support = () => {
     <div className="support-section bg-light">
       <Container className="text-center">
         <Row className="d-flex justify-content-center align-items-center text-center">
-          <Col md="5" className="text-end">
+          <Col md="5" className="text-md-end">
             <div>
               <img src="https://i.ibb.co/VJqFy9N/img-01.png" alt="" />
             </div>
@@ -18,7 +18,7 @@ const Support = () => {
           <Col md="2">
             <p className="fs-4"> -OR- </p>
           </Col>
-          <Col md="5 text-start">
+          <Col md="5 text-md-start">
             <div>
               <img
                 src="https://i.ibb.co/Ss0zKBX/Contact-v2logo-06.png"

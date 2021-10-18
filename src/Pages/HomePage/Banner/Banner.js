@@ -9,7 +9,7 @@ const Banner = () => {
         <Carousel.Item className="slide">
           <Container>
             <div className="row d-flex align-items-center">
-              <div className="col-6">
+              <div className="col-md-6">
                 <h3 className="display-4 fw-bold">
                   Our Commitment to{" "}
                   <span className="brand-color"> Safe Care</span>{" "}
@@ -23,7 +23,7 @@ const Banner = () => {
                   Booked Your Appointment
                 </button>
               </div>
-              <div className="col-6 text-end">
+              <div className="col-md-6 text-end ">
                 <img
                   className="d-block img-fluid  p-4"
                   src="https://i.ibb.co/qp637TG/img-01-2.png"
@@ -36,14 +36,14 @@ const Banner = () => {
         <Carousel.Item className="slide">
           <Container>
             <div className="row d-flex align-items-center">
-              <div className="col-6">
+              <div className="col-md-6">
                 <img
                   className="d-block  img-fluid  p-3"
                   src="https://i.ibb.co/nPTJ2BL/img-03-2.png"
                   alt="Second slide"
                 />
               </div>
-              <div className="col-6">
+              <div className="col-md-6">
                 <h3 className="display-4 fw-bold ">
                   Our Commitment to
                   <span className="brand-color"> Safe Care</span>

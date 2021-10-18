@@ -11,7 +11,7 @@ const Work = (props) => {
         </div>
         <div>
           <p className="fs-3 fw-normal">{title}</p>
-          <button className="fill-btn px-5  pt-3">
+          <button className="fill-btn px-md-5  pt-md-3">
             <p className="fw-bold fs-5 px-3">{buttonText}</p>
           </button>
         </div>
