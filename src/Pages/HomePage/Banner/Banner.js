@@ -1,5 +1,6 @@
 import React from "react";
 import { Carousel, Container } from "react-bootstrap";
+import { NavLink } from "react-router-dom";
 import "./Banner.css";
 
 const Banner = () => {
@@ -19,9 +20,11 @@ const Banner = () => {
                   life-changing care, you can count on us to keep you and your
                   loved ones safe and healthy.
                 </p>
-                <button className="btn fill-btn py-3 px-4">
-                  Booked Your Appointment
-                </button>
+                <NavLink to="/appointment">
+                  <button className="btn fill-btn py-3 px-4">
+                    Booked Your Appointment
+                  </button>
+                </NavLink>
               </div>
               <div className="col-md-6 text-end ">
                 <img
@@ -53,9 +56,11 @@ const Banner = () => {
                   life-changing care, you can count on us to keep you and your
                   loved ones safe and healthy.
                 </p>
-                <button className="btn fill-btn py-3 px-4">
-                  Booked Your Appointment
-                </button>
+                <NavLink to="/appointment">
+                  <button className="btn fill-btn py-3 px-4">
+                    Booked Your Appointment
+                  </button>
+                </NavLink>
               </div>
             </div>
           </Container>
