@@ -5,6 +5,7 @@ import Appointment from "./Pages/Appointment/Appointment";
 import Career from "./Pages/Career/Career";
 import Doctors from "./Pages/Doctors/Doctors";
 import Home from "./Pages/HomePage/Home";
+import Services from "./Pages/HomePage/Services/Services";
 import Login from "./Pages/Login/Login";
 import NotMatch from "./Pages/NotMatch/NotMatch";
 import Register from "./Pages/Register/Register";

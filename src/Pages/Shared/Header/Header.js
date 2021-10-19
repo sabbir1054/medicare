@@ -1,34 +1,67 @@
 import React from "react";
-import {  Container, Nav, Navbar } from "react-bootstrap";
-import './Header.css'
+import { Container, Nav, Navbar } from "react-bootstrap";
+import { NavLink } from "react-router-dom";
+import { NavHashLink } from "react-router-hash-link";
+import "./Header.css";
 const Header = () => {
   return (
     <>
       <Navbar bg="light" expand="lg">
         <Container>
-          <Navbar.Brand href="#home">
-            <h3 className="display-5 fw-normal logo">Medi<span className='brand-color'>Care</span> </h3>
-          </Navbar.Brand>
+          <NavLink to="/" className="text-decoration-none text-dark">
+            <h3 className="display-5 fw-normal logo">
+              Medi<span className="brand-color">Care</span>{" "}
+            </h3>
+          </NavLink>
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
           <Navbar.Collapse id="basic-navbar-nav">
             <Nav className=" mx-md-auto fw-bold logo">
-              <Nav.Link href="#home">Home</Nav.Link>
-              <Nav.Link href="#link">Doctors</Nav.Link>
-              <Nav.Link href="#services">Services</Nav.Link>
-              <Nav.Link href="#link">Appointment</Nav.Link>
-              <Nav.Link href="#link">About</Nav.Link>
+              <NavLink
+                to="/home"
+                className="text-decoration-none mx-2 text-secondary"
+              >
+                Home
+              </NavLink>
+              <NavLink
+                to="/doctors"
+                className="text-decoration-none mx-2 text-secondary"
+              >
+                Doctors
+              </NavLink>
+              <NavHashLink
+                to="/home/#services"
+                className="text-decoration-none mx-2 text-secondary"
+              >
+                Services
+              </NavHashLink>
+              <NavLink
+                to="/appointment"
+                className="text-decoration-none mx-2 text-secondary"
+              >
+                Appointment
+              </NavLink>
+              <NavLink
+                to="/about"
+                className="text-decoration-none mx-2 text-secondary"
+              >
+                About
+              </NavLink>
             </Nav>
             <div className="d-md-flex justify-content-space-evenly">
-              <button className="btn button mx-1">
-                <i className="fas fa-sign-in-alt"></i> Login
-              </button>
+              <NavLink to="/login">
+                <button className="btn button mx-1">
+                  <i className="fas fa-sign-in-alt"></i> Login
+                </button>
+              </NavLink>
               <h6 className="pt-2">name</h6>
               <button className="btn button mx-1">
                 <i className="fas fa-sign-out-alt"></i> Log Out
               </button>
-              <button className="btn fill-btn mx-1">
-                <i className="fas fa-user-plus"></i> Register
-              </button>
+              <NavLink to="/register">
+                <button className="btn fill-btn mx-1">
+                  <i className="fas fa-user-plus"></i> Register
+                </button>
+              </NavLink>
             </div>
           </Navbar.Collapse>
         </Container>

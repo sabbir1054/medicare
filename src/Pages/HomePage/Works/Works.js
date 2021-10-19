@@ -8,16 +8,19 @@ const Works = () => {
       img: "https://i.ibb.co/DG35Yqr/img-01-3.png",
       title: "Provide Best Professional",
       buttonText: "Doctors",
+      url:'/doctors'
     },
     {id:2,
       img: "https://i.ibb.co/h8MwYPJ/img-02-1.jpg",
       title: "Get Instant",
       buttonText: "Appointment",
+      url:'/appointment'
     },
     {id:3,
       img: "https://i.ibb.co/mt6xwR7/img-06-1.png",
       title: "Join For Your",
       buttonText: "Career",
+      url:'/career'
     },
   ];
   return (
