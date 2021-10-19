@@ -1,53 +1,60 @@
-import React from 'react';
-import { Col, Container, Row } from 'react-bootstrap';
-import './Login.css'
+import React from "react";
+import { Col, Container, Row } from "react-bootstrap";
+import { useForm } from "react-hook-form";
+import "./Login.css";
 const Login = () => {
-    return (
-      <div className="my-5">
-        <Container>
-          <Row className="d-md-flex align-items-center login shadow border">
-            <Col md={5} className="text-center d-flex justify-content-center ">
-              <div>
-                <img
-                  src="https://i.ibb.co/Kzhp5CR/img-04-1.png"
-                  className="img-fluid"
-                  alt=""
+  const {
+    register,
+    handleSubmit,
+    watch,
+    formState: { errors },
+  } = useForm();
+  const onSubmit = (data) => {
+    console.log(data);
+  };
+  return (
+    <div className="my-5">
+      <Container>
+        <Row className="d-md-flex align-items-center  shadow border ">
+          <Col
+            md={5}
+            className="text-center d-flex login justify-content-center py-5"
+          >
+            <div>
+              <img
+                src="https://i.ibb.co/Kzhp5CR/img-04-1.png"
+                className="img-fluid"
+                alt=""
+              />
+              <h3 className="display-5 fw-normal text-white logo">MediCare</h3>
+            </div>
+          </Col>
+          <Col md={7} className=" bg-light text-center py-5">
+            <h3 className="display-5 logo pt-3 fw-normal brand-color text-center">
+              Login Here
+            </h3>
+            <div className="">
+              <form onSubmit={handleSubmit(onSubmit)}>
+                <input
+                  placeholder="Enter Your Email"
+                  {...register("example")}
+                  className="w-75 py-2"
                 />
-                <h3 className="display-5 fw-normal text-white logo">
-                  MediCare
-                </h3>
-              </div>
-            </Col>
-            <Col md={7} className="bg-light text-center">
-              <h3 className="display-5 logo pt-3 fw-normal brand-color text-center">
-                Login Here
-              </h3>
-
-              <p>
-                uiyhgfoisdy7 tfdsoygf uiyf d7isfhi fyghoidyufh uifhoiuyf80
-                w7hsoihfu gosdhfunosduhfdsuyhfoishfu uy{" "}
-              </p>
-              <br />
-              <p>
-                uiyhgfoisdy7 tfdsoygf uiyf d7isfhi fyghoidyufh uifhoiuyf80
-                w7hsoihfu gosdhfunosduhfdsuyhfoishfu uy{" "}
-              </p>
-              <br />
-              <p>
-                uiyhgfoisdy7 tfdsoygf uiyf d7isfhi fyghoidyufh uifhoiuyf80
-                w7hsoihfu gosdhfunosduhfdsuyhfoishfu uy{" "}
-              </p>
-              <br />
-              <p>
-                uiyhgfoisdy7 tfdsoygf uiyf d7isfhi fyghoidyufh uifhoiuyf80
-                w7hsoihfu gosdhfunosduhfdsuyhfoishfu uy{" "}
-              </p>
-              <br />
-            </Col>
-          </Row>
-        </Container>
-      </div>
-    );
+                <br /> <br />
+                <input
+                  placeholder="Enter Your Password"
+                  {...register("exampleRequired", { required: true })}
+                  className="w-75 py-2"
+                />
+                <br /> <br />
+                <input type="submit" className="w-50 py-2 btn fill-btn " />
+              </form>
+            </div>
+          </Col>
+        </Row>
+      </Container>
+    </div>
+  );
 };
 
 export default Login;
