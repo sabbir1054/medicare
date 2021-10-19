@@ -1,8 +1,12 @@
 import React from "react";
-import { Card, Col } from "react-bootstrap";
+import { Card, Col, NavLink } from "react-bootstrap";
+import { useHistory } from "react-router";
+import { Link } from "react-router-dom";
 import "./Service.css";
 const Service = (props) => {
-  const { img, name, description } = props.service;
+  
+  const { img, name, description,id } = props.service;
+  
   return (
     <Col className="">
       <Card>
@@ -12,7 +16,9 @@ const Service = (props) => {
           <Card.Text>{description}</Card.Text>
         </Card.Body>
         <Card.Footer>
-          <button className="button btn">Details</button>
+          <Link to={`/service/${id}`}>
+            <button className="button btn">Details</button>
+          </Link>
         </Card.Footer>
       </Card>
     </Col>

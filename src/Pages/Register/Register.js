@@ -1,25 +1,25 @@
 import React from "react";
 import { Col, Container, Row } from "react-bootstrap";
 import { useForm } from "react-hook-form";
-import { Link } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import useAuth from "../../Hooks/useAuth";
 import useFirebase from "../../Hooks/useFirebase";
 
 
 const Register = () => {
-  
+   const { loginWithGoogle, registerNewUser, setName, setIsLoading } =
+     useAuth();
  
-  const {
-    register,
-    handleSubmit,
- 
-    formState: { errors },
-  } = useForm();
+  const {register,handleSubmit,formState: { errors }} = useForm();
   const onSubmit = (data) => {
     console.log(data);
+   
+    registerNewUser(data.email, data.password);
+    
+    setName(data.name)
   };
 
-  const { loginWithGoogle } = useAuth();
+ 
   return (
     <div className="my-5">
       <Container>
@@ -46,32 +46,31 @@ const Register = () => {
               <form onSubmit={handleSubmit(onSubmit)}>
                 <input
                   placeholder="Enter Your name"
-                  {...register(
-                    "Required",
-                    { required: true },
-                    { maxlength: 15 }
-                  )}
+                  {...register("name", { required: true }, { maxlength: 15 })}
                   className="w-75 py-2"
                 />
                 <br /> <br />
                 <input
                   placeholder="Enter Your Email"
-                  {...register("example")}
+                  {...register("email")}
                   className="w-75 py-2"
                 />
                 <br /> <br />
                 <input
+                  type="password"
                   placeholder="Enter Your Password"
                   {...register(
-                    "Required",
+                    "password",
                     { required: true },
-                    { pattern: /^[A-Za-z]+$/i },
+
                     { min: 8 }
                   )}
                   className="w-75 py-2"
                 />
                 <br /> <br />
-                <input type="Submit" className="w-50 py-2 btn fill-btn " />
+                
+                  <input type="Submit" className="w-50 py-2 btn fill-btn " />
+                
                 <br />
                 <p> - OR - </p>
               </form>

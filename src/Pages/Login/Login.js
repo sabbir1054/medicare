@@ -7,10 +7,11 @@ import useAuth from "../../Hooks/useAuth";
 import "./Login.css";
 const Login = () => {
 
-  const { loginWithGoogle } = useAuth();
+  const { loginWithGoogle, loginWithEmailPassword } = useAuth();
   const {register,handleSubmit,formState: { errors }} = useForm();
   const onSubmit = (data) => {
     console.log(data);
+    // loginWithEmailPassword(data.email, data.password);
   };
 
   return (
@@ -52,8 +53,7 @@ const Login = () => {
                 <br />
                 <p> - OR - </p>
               </form>
-              <button className="mb-1 btn button"
-              onClick={loginWithGoogle}>
+              <button className="mb-1 btn button" onClick={loginWithGoogle}>
                 {" "}
                 <img
                   src="https://i.ibb.co/HPd5k52/pngwing-com.png"

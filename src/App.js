@@ -1,18 +1,17 @@
-
-import { EmailAuthProvider } from "@firebase/auth";
-import { BrowserRouter , Switch, Route } from "react-router-dom";
+import { BrowserRouter, Route, Switch } from "react-router-dom";
+import AuthProvider from "./Context/AuthProvider";
 import About from "./Pages/About/About";
 import Appointment from "./Pages/Appointment/Appointment";
 import Career from "./Pages/Career/Career";
 import Doctors from "./Pages/Doctors/Doctors";
 import Home from "./Pages/HomePage/Home";
+import SingleService from "./Pages/HomePage/SingleService/SingleService";
 import Login from "./Pages/Login/Login";
 import NotMatch from "./Pages/NotMatch/NotMatch";
 import Register from "./Pages/Register/Register";
 import Footer from "./Pages/Shared/Footer/Footer";
 import Header from "./Pages/Shared/Header/Header";
-import SingleService from "./Pages/SingleService/SingleService";
-import AuthProvider from './Context/AuthProvider'
+import PrivateRoute from "./PrivetRoute/PrivateRoute";
 
 function App() {
   return (
@@ -33,21 +32,21 @@ function App() {
             <Route path="/register">
               <Register></Register>
             </Route>
-            <Route path="/appointment">
+            <PrivateRoute path="/appointment">
               <Appointment></Appointment>
-            </Route>
-            <Route path="/career">
+            </PrivateRoute>
+            <PrivateRoute path="/career">
               <Career></Career>
-            </Route>
-            <Route path="/doctors">
+            </PrivateRoute>
+            <PrivateRoute path="/doctors">
               <Doctors></Doctors>
-            </Route>
+            </PrivateRoute>
             <Route path="/about">
               <About></About>
             </Route>
-            <Route path="/home/:serviceId">
+            <PrivateRoute exact path="/service/:serviceId">
               <SingleService></SingleService>
-            </Route>
+            </PrivateRoute>
             <Route path="/*">
               <NotMatch></NotMatch>
             </Route>
