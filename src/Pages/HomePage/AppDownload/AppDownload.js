@@ -10,7 +10,7 @@ const AppDownload = () => {
               <img src="https://i.ibb.co/7RVGBd1/img-01-4.png" className='img-fluid' alt="" />
             </Col>
             <Col md="6">
-              <h3 className="display-5 fw-bold">
+              <h3 className="display-5 fw-bold ">
                 Care On The GO
                 <span className="brand-color"> Download Mobile App</span>
               </h3>

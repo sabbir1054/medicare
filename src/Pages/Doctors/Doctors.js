@@ -14,10 +14,12 @@ const Doctors = () => {
     },[])
     
     return (
-      <div>
-        <h1>This is doctors page</h1>
+      <div className='bg-light'>
+        <h1 className="text-center logo fw-bold py-5">
+          Our <span className='brand-color '>Top Rated</span> Doctors
+        </h1>
         <Container>
-          <Row className="">
+          <Row className="mb-5">
             {doctors.map((doctor) => (
               <Doctor doctor={doctor} key={doctor.id}></Doctor>
             ))}
