@@ -1,6 +1,7 @@
 import React from "react";
 import { Col, Container, Row } from "react-bootstrap";
 import { useForm } from "react-hook-form";
+import { Link } from "react-router-dom";
 import "./Login.css";
 const Login = () => {
   const {
@@ -48,6 +49,18 @@ const Login = () => {
                 />
                 <br /> <br />
                 <input type="submit" className="w-50 py-2 btn fill-btn " />
+                <br />
+                <p> - OR - </p>
+                <button className="mb-1 btn button">
+                  {" "}
+                  <img
+                    src="https://i.ibb.co/HPd5k52/pngwing-com.png"
+                    alt=""
+                    width='25'
+                  />{" "}
+                  Login With Google
+                </button><br />
+                <Link to='/register'>New Member? register here</Link>
               </form>
             </div>
           </Col>
