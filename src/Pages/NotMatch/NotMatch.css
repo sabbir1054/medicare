@@ -1,0 +1,14 @@
+.notMatch{
+    background-image: url('https://i.ibb.co/71VkzMS/stethescope-bg-2x-min.jpg');
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+    color: rgb(226, 24, 24);
+}
+.error{
+    font-size: 20vw;
+}
+.small{
+    font-size: 5vw;
+    color: rgb(233, 62, 19);
+}
