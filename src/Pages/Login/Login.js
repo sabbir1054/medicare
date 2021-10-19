@@ -1,17 +1,28 @@
 import React from "react";
 import { Col, Container, Row } from "react-bootstrap";
 import { useForm } from "react-hook-form";
-import { Link } from "react-router-dom";
+import { Link, useHistory, useLocation } from "react-router-dom";
 import useAuth from "../../Hooks/useAuth";
-
 import "./Login.css";
-const Login = () => {
 
+const Login = () => {
   const { loginWithGoogle, loginWithEmailPassword } = useAuth();
-  const {register,handleSubmit,formState: { errors }} = useForm();
+  const location = useLocation();
+  const history = useHistory();
+  const redirect_uri = location.state?.from || "/home";
+
+  const handleLogin = () => {
+    loginWithGoogle().then((result) => {
+      history.push(redirect_uri);
+    });
+  };
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+  } = useForm();
   const onSubmit = (data) => {
-    console.log(data);
-    // loginWithEmailPassword(data.email, data.password);
+    loginWithEmailPassword(data.email, data.password);
   };
 
   return (
@@ -53,7 +64,7 @@ const Login = () => {
                 <br />
                 <p> - OR - </p>
               </form>
-              <button className="mb-1 btn button" onClick={loginWithGoogle}>
+              <button className="mb-1 btn button" onClick={handleLogin}>
                 {" "}
                 <img
                   src="https://i.ibb.co/HPd5k52/pngwing-com.png"

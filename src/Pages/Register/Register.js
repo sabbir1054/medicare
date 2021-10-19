@@ -7,16 +7,14 @@ import useFirebase from "../../Hooks/useFirebase";
 
 
 const Register = () => {
-   const { loginWithGoogle, registerNewUser, setName, setIsLoading } =
-     useAuth();
+   const { loginWithGoogle, registerNewUser,  } =useAuth();
  
   const {register,handleSubmit,formState: { errors }} = useForm();
   const onSubmit = (data) => {
     console.log(data);
-   
-    registerNewUser(data.email, data.password);
+    registerNewUser(data.name,data.email, data.password);
     
-    setName(data.name)
+    
   };
 
  

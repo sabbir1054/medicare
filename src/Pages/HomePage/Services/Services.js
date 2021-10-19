@@ -1,17 +1,10 @@
 import React, { useEffect, useState } from "react";
 import { Container, Row } from "react-bootstrap";
+import useService from "../../../Hooks/useService";
 import Service from "./Service";
 
 const Services = () => {
-  const [services, setServices] = useState([]);
-
-  useEffect(() => {
-    fetch(
-      "https://raw.githubusercontent.com/sabbir1054/mytext/master/serviceData.json"
-    )
-      .then((res) => res.json())
-      .then((data) => setServices(data));
-  }, []);
+  const services = useService();
   return (
     <div className="bg-light pt-5 mb-3" id="services">
       <Container>
