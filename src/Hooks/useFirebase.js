@@ -81,22 +81,7 @@ const useFirebase = () => {
     });
     return () => unsubscribed;
   }, []);
-  //set user name manually
- /*  const setUserName = (name) => {
-     setIsLoading(true);
-    updateProfile(auth.currentUser, {
-      displayName: name,
-    })
-      .then(() => {
-        // Profile updated!
-        // ...
-      })
-      .catch((error) => {
-        // An error occurred
-        // ...
-      })
-      .finally(() => setIsLoading(false));
-  }; */
+
   //logout user
   const logOut = () => {
     setIsLoading(true);
@@ -113,7 +98,7 @@ const useFirebase = () => {
     registerNewUser,
     loginWithEmailPassword,
     setIsLoading,
-    // setName,
+    
   };
 };
 
