@@ -1,23 +1,21 @@
 import React from "react";
 import { Col, Container, Row } from "react-bootstrap";
 import { useForm } from "react-hook-form";
-import { Link, NavLink } from "react-router-dom";
+import { Link } from "react-router-dom";
 import useAuth from "../../Hooks/useAuth";
-import useFirebase from "../../Hooks/useFirebase";
-
 
 const Register = () => {
-   const { loginWithGoogle, registerNewUser,  } =useAuth();
- 
-  const {register,handleSubmit,formState: { errors }} = useForm();
+  const { loginWithGoogle, registerNewUser } = useAuth();
+
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+  } = useForm();
   const onSubmit = (data) => {
-    console.log(data);
-    registerNewUser(data.name,data.email, data.password);
-    
-    
+    registerNewUser(data.name, data.email, data.password);
   };
 
- 
   return (
     <div className="my-5">
       <Container>
@@ -66,9 +64,7 @@ const Register = () => {
                   className="w-75 py-2"
                 />
                 <br /> <br />
-                
-                  <input type="Submit" className="w-50 py-2 btn fill-btn " />
-                
+                <input type="Submit" className="w-50 py-2 btn fill-btn " />
                 <br />
                 <p> - OR - </p>
               </form>
