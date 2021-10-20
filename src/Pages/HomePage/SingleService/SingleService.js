@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { Container } from 'react-bootstrap';
 import { useParams } from 'react-router';
-import useService from '../../../Hooks/useService';
 import './SingleService.css'
 const SingleService = () => {
     const [service, setService] = useState([]);

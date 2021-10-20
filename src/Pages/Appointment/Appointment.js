@@ -1,5 +1,6 @@
 import React from "react";
 import { Col, Container, Form, Row } from "react-bootstrap";
+import { NavLink } from "react-router-dom";
 
 const Appointment = () => {
   return (
@@ -82,11 +83,12 @@ const Appointment = () => {
                       label="Accept our privacy policy"
                     />
                   </Form.Group>
-
-                  <button className="btn fill-btn" type="submit">
+                </Form>
+                <NavLink to="/">
+                  <button className="btn fill-btn" >
                     Submit
                   </button>
-                </Form>
+                </NavLink>
               </div>
             </Col>
           </Row>

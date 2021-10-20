@@ -1,16 +1,21 @@
 import React from "react";
 import { Col, Container, Form, Row } from "react-bootstrap";
 import { useForm } from "react-hook-form";
+import { useHistory } from "react-router";
+
 
 const Career = () => {
+  
+  const history = useHistory();
+
   const {
     register,
     handleSubmit,
-    watch,
+   
     formState: { errors },
   } = useForm();
   const onSubmit = (data) => {
-    console.log(data);
+    history.push('/')
   };
   return (
     <>
@@ -40,20 +45,24 @@ const Career = () => {
                 <form onSubmit={handleSubmit(onSubmit)}>
                   <input
                     placeholder="Enter Your name"
-                    {...register(
-                      "Required",
-                      { required: true },
-                      { maxlength: 15 }
-                    )}
+                    {...register("name", { required: true }, { maxlength: 15 })}
                     className="w-75 py-2"
-                  />
+                  /> <br />
+                  
+                  {errors.name && (
+                    <span className="text-danger">This field is required</span>
+                  )}
                   <br /> <br />
                   <input
                     placeholder="Enter Your Email"
-                    {...register("example")}
+                    {...register("email", { required: true })}
                     className="w-75 py-2"
                   />
-                  <br /> <br />
+                  <br />
+                  {errors.email && (
+                    <span className="text-danger">This field is required</span>
+                  )}
+                  <br />
                   <select {...register("gender")} className="w-75 py-2">
                     <option value="male">Male</option>
                     <option value="female">Female</option>
@@ -70,14 +79,13 @@ const Career = () => {
                   <br />
                   <input
                     placeholder="Enter Your Password"
-                    {...register(
-                      "Required",
-                      { required: true },
-                      { pattern: /^[A-Za-z]+$/i },
-                      { min: 8 }
-                    )}
+                    {...register("password", { required: true }, { min: 8 })}
                     className="w-75 py-2"
-                  />
+                  />{" "}
+                  <br />
+                  {errors.password && (
+                    <span className="text-danger">This field is required</span>
+                  )}
                   <br /> <br />
                   <input type="Submit" className="w-50 py-2 btn fill-btn " />
                 </form>

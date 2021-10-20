@@ -1,6 +1,6 @@
 import React from "react";
-import { Card, Col, NavLink } from "react-bootstrap";
-import { useHistory } from "react-router";
+import { Card, Col } from "react-bootstrap";
+
 import { Link } from "react-router-dom";
 import "./Service.css";
 const Service = (props) => {
