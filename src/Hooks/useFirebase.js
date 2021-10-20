@@ -26,9 +26,7 @@ const useFirebase = () => {
   const loginWithEmailPassword = (email, password) => {
     setIsLoading(true);
     return signInWithEmailAndPassword(auth, email, password)
-      .catch((error) => {
-        setError(error.message);
-      })
+     
       .finally(() => setIsLoading(false));
   };
 
@@ -59,11 +57,12 @@ const useFirebase = () => {
         }).then(() => {
           // Profile updated!
       
-        });
-        setError("");
+        })
+        
       })
       .catch((error) => {
         setError(error.message);
+        
       })
       .finally(() => setIsLoading(false));
       

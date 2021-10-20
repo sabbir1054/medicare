@@ -6,7 +6,7 @@ import useAuth from "../../Hooks/useAuth";
 import "./Login.css";
 
 const Login = () => {
-  const { loginWithGoogle, loginWithEmailPassword, error, setUser,setError } = useAuth();
+  const { loginWithGoogle, loginWithEmailPassword, error, setUser,setError,user } = useAuth();
   const location = useLocation();
   const history = useHistory();
   const redirect_uri = location.state?.from || "/home";
@@ -26,18 +26,21 @@ const Login = () => {
     
     loginWithEmailPassword(data.email, data.password)
       .then((result) => {
-      const user = result.user;
-      setUser(user);
+        const user = result.user;
+        setUser(user);
         setError("");
         history.push(redirect_uri);
-    });
+      })
+      .catch((error) => {
+        setError(error.message);
+      });
     
   };
- 
+  
   return (
     <div className="my-5">
       <Container>
-        {/* <h5 className='text-danger text-center'>{console.log(error) }</h5> */}
+        <h5 className="text-center text-danger" id='error'>{error? `User Not Found, Enter Correct Info`:'' }</h5>
         <Row className="d-md-flex login align-items-center  shadow border ">
           <Col
             md={5}
