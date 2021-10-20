@@ -38,10 +38,10 @@ const Login = () => {
     <div className="my-5">
       <Container>
         {/* <h5 className='text-danger text-center'>{console.log(error) }</h5> */}
-        <Row className="d-md-flex align-items-center  shadow border ">
+        <Row className="d-md-flex login align-items-center  shadow border ">
           <Col
             md={5}
-            className="text-center d-flex login justify-content-center py-5"
+            className="text-center d-flex  justify-content-center py-5"
           >
             <div>
               <img
