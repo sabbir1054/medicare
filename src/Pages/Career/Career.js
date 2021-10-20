@@ -78,6 +78,7 @@ const Career = () => {
                   </div>
                   <br />
                   <input
+                    type='password'
                     placeholder="Enter Your Password"
                     {...register("password", { required: true }, { min: 8 })}
                     className="w-75 py-2"
