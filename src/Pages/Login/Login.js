@@ -6,7 +6,7 @@ import useAuth from "../../Hooks/useAuth";
 import "./Login.css";
 
 const Login = () => {
-  const { loginWithGoogle, loginWithEmailPassword } = useAuth();
+  const { loginWithGoogle, loginWithEmailPassword, error, setUser,setError } = useAuth();
   const location = useLocation();
   const history = useHistory();
   const redirect_uri = location.state?.from || "/home";
@@ -14,7 +14,8 @@ const Login = () => {
   const handleLogin = () => {
     loginWithGoogle().then((result) => {
       history.push(redirect_uri);
-    });
+    })
+    
   };
   const {
     register,
@@ -22,12 +23,21 @@ const Login = () => {
     formState: { errors },
   } = useForm();
   const onSubmit = (data) => {
-    loginWithEmailPassword(data.email, data.password);
+    
+    loginWithEmailPassword(data.email, data.password)
+      .then((result) => {
+      const user = result.user;
+      setUser(user);
+        setError("");
+        history.push(redirect_uri);
+    });
+    
   };
-
+ 
   return (
     <div className="my-5">
       <Container>
+        {/* <h5 className='text-danger text-center'>{console.log(error) }</h5> */}
         <Row className="d-md-flex align-items-center  shadow border ">
           <Col
             md={5}
@@ -56,11 +66,17 @@ const Login = () => {
                 <br /> <br />
                 <input
                   placeholder="Enter Your Password"
+                  type="password"
                   {...register("password", { required: true })}
                   className="w-75 py-2"
                 />
                 <br /> <br />
-                <input type="submit" className="w-50 py-2 btn fill-btn " />
+                <input
+                  type="submit"
+                  readOnly
+                  value="Submit"
+                  className="w-50 py-2 btn fill-btn "
+                />
                 <br />
                 <p> - OR - </p>
               </form>

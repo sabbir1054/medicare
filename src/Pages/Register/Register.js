@@ -1,12 +1,19 @@
 import React from "react";
 import { Col, Container, Row } from "react-bootstrap";
 import { useForm } from "react-hook-form";
-import { Link } from "react-router-dom";
+import { Link,useHistory } from "react-router-dom";
 import useAuth from "../../Hooks/useAuth";
 
 const Register = () => {
+  const history = useHistory();
   const { loginWithGoogle, registerNewUser } = useAuth();
+const redirect_uri =  "/home";
 
+const handleLogin = () => {
+  loginWithGoogle().then((result) => {
+    history.push(redirect_uri);
+  });
+};
   const {
     register,
     handleSubmit,
@@ -64,11 +71,16 @@ const Register = () => {
                   className="w-75 py-2"
                 />
                 <br /> <br />
-                <input type="Submit" className="w-50 py-2 btn fill-btn " />
+                <input
+                  readOnly
+                  type="Submit"
+                  value="Submit"
+                   className="w-50 py-2 btn fill-btn "
+                />
                 <br />
                 <p> - OR - </p>
               </form>
-              <button className="mb-1 btn button" onClick={loginWithGoogle}>
+              <button className="mb-1 btn button" onClick={handleLogin}>
                 <img
                   src="https://i.ibb.co/HPd5k52/pngwing-com.png"
                   alt=""
