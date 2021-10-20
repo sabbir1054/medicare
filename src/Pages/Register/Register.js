@@ -77,7 +77,7 @@ const Register = () => {
                 Register With Google
               </button>
               <br />
-              <Link to="/register">Already Member? login here</Link>
+              <Link to="/login">Already Member? login here</Link>
             </div>
           </Col>
         </Row>
